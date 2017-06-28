@@ -1,0 +1,19 @@
+{
+  "songs": [
+    {
+      "title": "Hippy Hippy Shake",
+      "artist": "The Egg Beaters",
+      "album": "Shake It Don't Break It"
+    },
+    {
+      "title": "The Hokey Pokie",
+      "artist": "Barney and Friends",
+      "album": "Drive Yer Parents Nuts"
+    },
+    {
+      "title": "What's Up?",
+      "artist": "The Downers",
+      "album": "Emotional Roller Coaster"
+    }
+  ]
+}
