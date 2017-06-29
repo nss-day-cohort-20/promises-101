@@ -4,4 +4,22 @@
 
 console.log("Hello");
 
-SongFaves.UserFactory.getUsers()
+$("select").change( function() {
+  console.log($(this).val());
+  let selectedUser = $(this).val();
+  SongFaves.UserFactory.getUsers(selectedUser)
+})
+
+// Without promises, we kick off the chain of events, but have to navigate from file to file to see what happens next
+// SongFaves.UserFactory.getUsers();
+
+// With Promises, all the execution of functions in the order we want/need is contained here in one place, making it
+// easier to understand the sequence of events.
+// SongFaves.UserFactory.getUsers()
+// .then( function(dataFromGetUsers) {
+//   console.log("users data", dataFromGetUsers);
+//   // return SongFaves.FavesFactory.getFaves(dataFromGetUsers)
+// })
+// .then( function(dataFromGetFaves) {
+//   console.log("Faves data", dataFromGetFaves);
+// })

@@ -1,18 +1,19 @@
+// non-Promises version
 {
   const favesFactory = Object.create(null);
 
-  favesFactory.getFaves = function(users) {
-    users.forEach( function(user) {
-      let favesReq = new XMLHttpRequest();
-      favesReq.addEventListener("load", function() {
-        let faves = JSON.parse(this.responseText).songs;
-        SongFaves.DomStuff.listFaves(user, faves)
-      });
-      favesReq.open("GET", `data/songs-${user.id}.json`);
-      favesReq.send();
+  favesFactory.getFaves = function(user) {
+    $.ajax({
+      url: `data/songs-${user.id}.json`
+    })
+    .done( function(data) {
+      SongFaves.DomStuff.listFaves(user, data.songs)
     });
   }
-
+  
   window.SongFaves = window.SongFaves || {}
   window.SongFaves.FavesFactory = favesFactory;
 }
+
+// With Promises
+
