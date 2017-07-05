@@ -1,6 +1,10 @@
 'use strict';
 
-var a = 7;
+let SongFaves = {
+  domStuff: require('./domStuff'),
+  faves: require('./favorites'),
+  users: require('./users')
+};
 
 $("select").change( function() {
   console.log($(this).val());
@@ -11,13 +15,13 @@ $("select").change( function() {
   // With Promises, all the execution of functions in the order 
   // we want/need is contained here in one place, making it
   // easier to understand the sequence of events.
-  SongFaves.UserFactory.getUsers(selectedUser)
+  SongFaves.users.getUsers(selectedUser)
   .then( (dataFromGetUsers) => {
-    return SongFaves.FavesFactory.getFaves(dataFromGetUsers);
+    return SongFaves.faves(dataFromGetUsers);
   })
   .then( (dataFromGetFaves) => {
     //do something with the data
-    SongFaves.DomStuff.listFaves(selectedUser, dataFromGetFaves);
+    SongFaves.domStuff.listFaves(selectedUser, dataFromGetFaves);
   })
   .catch( (err) => {
     console.log("Oops, there was an error:", err.statusText);

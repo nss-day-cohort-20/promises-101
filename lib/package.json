@@ -18,6 +18,7 @@
   "homepage": "https://github.com/nss-day-cohort-20/promises-101#readme",
   "dependencies": {
     "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
