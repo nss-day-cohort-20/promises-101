@@ -1,7 +1,7 @@
 'use strict';
 
 // const favesFactory = Object.create(null);
-
+let $ = require('jquery');
 function getFaves(user) {
   return new Promise( ( resolve, reject) => {
     $.ajax({
@@ -15,3 +15,8 @@ function getFaves(user) {
 }
 
 module.exports = getFaves;
+
+
+
+
+

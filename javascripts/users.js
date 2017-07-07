@@ -1,7 +1,7 @@
 'use strict';
 
 const userFactory = Object.create(null);
-
+let $ = require('jquery');
 userFactory.getUsers = function(selectedUser) {
   return new Promise( function(resolve, reject) {
     $.ajax({

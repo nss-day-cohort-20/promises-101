@@ -1,5 +1,5 @@
 "use strict";
-
+let $ = require('jquery');
 const domStuff = Object.create(null);
 let $favesContainer = $("#fave-songs");
 

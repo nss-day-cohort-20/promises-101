@@ -1,10 +1,14 @@
 'use strict';
 
+// let $ = require('jquery');
+
 let SongFaves = {
   domStuff: require('./domStuff'),
   faves: require('./favorites'),
   users: require('./users')
 };
+
+let $ = require("jquery");
 
 $("select").change( function() {
   console.log($(this).val());
